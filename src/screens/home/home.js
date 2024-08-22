@@ -2,20 +2,24 @@ import React from 'react';
 import { StyleSheet, Text, View, Button, Image, TouchableOpacity } from 'react-native';
 
 
-const LogoImage = require('../../../assets/logo.png');
-const homeFoto = require('../../../assets/homeft.png');
+
+
 
 
 function Home({ navigation }) {
+ 
+
+  <Image style={styles.image} />
   return (
     <View style={styles.container}>
     
-      <Image source={LogoImage} style={styles.image} />
-      <Image source={homeFoto} style={styles.image2} />
+    <View style={styles.circle}>
+        
+      </View>
 
-      <Text style={styles.title}> Bem Vindo À Nossa Plataforma de Saúde Online</Text>
+      <Text style={styles.title}>Bem Vindo À Nossa Plataforma de Saúde Online</Text>
       <Text style={styles.subtitle}>
-    Acompanhe, monitore e melhore seus hábitos saudáveis!
+    Acompanhe, monitore e melhore seus hábitos saudáveis.
       </Text>
       <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Login')}>
         <Text style={styles.buttonText}> Começar </Text>
@@ -25,55 +29,55 @@ function Home({ navigation }) {
     </View>
   );
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F4F8F6',
-    padding: 20,
     justifyContent: 'center',
     alignItems: 'center',
-    
-  },
-  image: {
-    width: 30, 
-    height: 30,
-   marginTop: 80
-  },
-  image2: {
-    width: 360, 
-    height: 400,
-    padding: 'auto',
-    marginBottom: 10,
+    backgroundColor: '#F8F8F8',
+    paddingHorizontal: 20,
   },
   title: {
-    fontSize: 20,
+    fontSize: 30,
     fontWeight: 'bold',
-    color: '#2C7A2E',
-    textAlign: 'center',
+    color: '#333',
     marginBottom: 10,
   },
   subtitle: {
-    fontSize: 16,
-    color: '#6D7D72',
+    fontSize: 15,
+    color: '#666',
     textAlign: 'center',
-    marginBottom: 30,
+    marginBottom: 20,
   },
   button: {
-    backgroundColor: '#4ADE80',
-    width: 350,
-    height: 50,
-    borderRadius: 9,
-    marginBottom: 20,
+    backgroundColor: '#0EAB6E',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    borderRadius: 10,
+    width: 380,
+    height: 50
   },
   buttonText: {
-    color: '#FFFFFF',
-    fontSize: 18,
+    fontSize: 20,
+    color: '#fff',
     fontWeight: 'bold',
   },
 
+  circle: {
+    width: 400, 
+    height: 400,
+    borderRadius: 200, 
+    backgroundColor: '#E7F9ED', // Cor verde
+    marginBottom: 100,
+    marginTop: 100
+   
+  },
+  image: {
+    width: 120, 
+    height: 120,
+    borderRadius: 60, // Adiciona bordas arredondadas para a imagem, se desejar
+    resizeMode: 'cover', // Mantém a proporção da imagem ao redimensionar
+  },
 });
 
 export default Home;
